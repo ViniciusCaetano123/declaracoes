@@ -26,7 +26,7 @@
                </span>
            </div>
      <p>Selecione o Estado que deseja visualizar</p>
-     <Brasil />
+     <Brasil @backFalse="back = $event" />
  </div>
 
        </div>
@@ -49,14 +49,17 @@ export default {
              this.back = true
         },
         backGroud(event){
-            console.log(event)
+           
             let b = document.querySelector('.back')
             let s = document.querySelector('#s')
+            let p = document.querySelector('path')
            
-            this.back  = event.srcElement == b ? false : true
-            console.log(this.back)
+            this.back  = event.srcElement == b ? false : true            
             if(this.back){
                 this.back = event.srcElement == s ? false : true
+                if(this.back){                   
+                    this.back = event.srcElement != p ? false : true
+                }
             }
         },
         pagEstaduais(){
@@ -99,12 +102,12 @@ export default {
 }
 .back div.brasilModal{
     background: #fff;
-    width: 80vh;
+    width: 650px;
     position: absolute;
-    height: 800px;
-     top: 40%;  
+    height: 600px;
+     top: 200px;  
     left: 50%;
-    transform: translate(-50%, -40%);
+    transform: translate(-50%, -200px);
     padding: 20PX;
     text-align: center;
 }

@@ -7,8 +7,8 @@
             xmlns:xlink="http://www.w3.org/1999/xlink"
             x="0px"
             y="0px"
-            width="650px"
-            height="660px"
+            width="490px"
+            height="490px"
             viewBox="0 0 450 460"
             enable-background="new 0 0 450 460"
             xml:space="preserve"
@@ -519,6 +519,9 @@ export default {
     methods:{
         irParaPagEstado(estado,sigla){
             this.$router.push({name:'declaracoesEstaduais',params:{sigla:sigla}})
+            this.$store.state.estado = estado
+            console.log(this.$store.state.estado)
+            this.$emit('backFalse',true)
         }
     },
     async created(){

@@ -4,6 +4,6 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 export default  new Vuex.Store({
     state:{      
-      tmpCo:0
+      estado:''
     }        
   })

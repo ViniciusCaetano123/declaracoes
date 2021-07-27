@@ -1,13 +1,36 @@
 <template>
   <div class="containerP">
    <topoDecla />
-   <p class="txtDecla">{{$route.params.sigla}}Declarações Estaduais</p>
+   <p class="txtDecla">{{$store.state.estado}} | <span style="font-weight:300;">Declarações Estaduais</span></p>
+   <Conteudo  @spinerFalse="spiner = $event" v-if="spiner"/> 
+   <Spiner v-else />
   </div>
 </template>
 
 <script>
+import Conteudo from '../components/Conteudo.vue'
+import Spiner from '../components/Spiner.vue'
 export default {
-
+components:{
+  Conteudo,
+  Spiner
+},
+data(){
+  return{
+    spiner:false
+  }
+},
+methods:{
+  GetDados(){
+             setTimeout(()=>{
+                console.log('vindo')
+                this.spiner = true
+            },3000)
+        }
+},
+mounted(){
+  this.GetDados()
+}
 }
 </script>
 

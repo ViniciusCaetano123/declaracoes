@@ -19,7 +19,7 @@
 
 <style>
 .txtDecla{
-    font-size:2em;
+    font-size:1.7em;
     color: #38185B;
     font-weight: bold;
     text-align: center;
